@@ -30,7 +30,7 @@ class KaggleModelTrainer:
     """Train models using real Kaggle datasets."""
     
     def __init__(self):
-        self.models_dir = "/Users/khobaituddinsimran/AI-submissions-2025/models"
+        self.models_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models")
         os.makedirs(self.models_dir, exist_ok=True)
         
         self.fault_detector = None
@@ -145,10 +145,6 @@ class KaggleModelTrainer:
                 return df
             
             print("   ✗ Could not find PS1.txt and FS1.txt files")
-            return None
-        except Exception as e:
-            print(f"   ✗ Download failed: {e}")
-            return None
             return None
         except Exception as e:
             print(f"   ✗ Download failed: {e}")

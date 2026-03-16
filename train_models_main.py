@@ -6,7 +6,9 @@ If Kaggle is not configured, it will generate and train on synthetic data.
 
 import os
 import sys
-sys.path.insert(0, '/Users/khobaituddinsimran/AI-submissions-2025/students/S12345_KhobaitSimran')
+# Add the student backend directory to the path
+_script_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(_script_dir, 'students', 'Train'))
 
 from ml_training_kaggle import MLModelTrainer
 
@@ -39,7 +41,7 @@ def train_models():
                     print(f"  {key}: {value}")
     
     print("\n" + "=" * 70)
-    print("Trained models saved to: /Users/khobaituddinsimran/AI-submissions-2025/models/")
+    print(f"Trained models saved to: {os.path.join(_script_dir, 'models')}/")
     print("=" * 70)
     
     return trainer

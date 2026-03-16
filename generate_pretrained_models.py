@@ -38,7 +38,7 @@ def generate_pressure_data(n_samples=500):
 # Train and save models
 def create_models():
     """Train and save all ML models."""
-    models_dir = "/Users/khobaituddinsimran/AI-submissions-2025/models"
+    models_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models")
     os.makedirs(models_dir, exist_ok=True)
     
     print("=" * 60)
